@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/autodoc?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: ${AUTODOC_PASSWORD}
+  jpa:
+    database: mysql
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        ddl-auto: update
+        format_sql: true
+    show-sql: true
