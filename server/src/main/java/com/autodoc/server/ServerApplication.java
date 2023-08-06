@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableJpaAuditing
-@EntityScan(basePackages = {"com.autodoc.server"})
+@EntityScan(basePackages = {"com.autodoc.server.member"})
 public class ServerApplication {
 
 	public static void main(String[] args) {

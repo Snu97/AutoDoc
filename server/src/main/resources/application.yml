@@ -9,6 +9,21 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-        ddl-auto: create
+        ddl-auto: update
         format_sql: true
     show-sql: true
+logging:
+  level:
+    org:
+      springframework:
+        orm:
+          jpa: DEBUG
+      hibernate:
+        search: DEBUG
+server:
+  servlet:
+    encoding:
+      force-response: true
+mail:
+  address:
+    admin: admin@gmail.com
