@@ -9,10 +9,9 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
-@Entity(name = "Member")
+@Entity
 public class Member extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,5 +20,6 @@ public class Member extends Auditable {
     @Column(length = 30, nullable = false, updatable = false, unique = true)
     private String email;
 
-    @Column(length = 100, nullable = true)
-    private String password;}
+    @Column(length = 100)
+    private String password;
+}
