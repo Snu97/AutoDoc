@@ -3,6 +3,7 @@ package com.autodoc.server.member;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,11 +19,12 @@ public class MemberController {
     }
 
     @PostMapping
-    public ResponseEntity createMember(MemberDto.Post requestBody){
+    public ResponseEntity createMember(@RequestBody MemberDto.Post requestBody){
 
-        Member member = memberService.createMember(memberMapper.memberPostToMember(requestBody));
+        Member response = memberService.createMember(memberMapper.memberPostToMember(requestBody));
 
-
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>(memberMapper.memberToMemberResponse(response), HttpStatus.CREATED);
     }
+
+
 }

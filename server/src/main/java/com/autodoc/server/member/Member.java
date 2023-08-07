@@ -1,6 +1,7 @@
 package com.autodoc.server.member;
 
 import com.autodoc.server.audit.Auditable;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,9 +17,9 @@ public class Member extends Auditable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long memberId;
 
-    @Column(nullable = false, unique = true)
+    @Column(length = 30, nullable = false, updatable = false, unique = true)
     private String email;
 
-    @Column(length = 100, nullable = true)
+    @Column(length = 100)
     private String password;
 }
