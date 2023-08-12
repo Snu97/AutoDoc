@@ -7,5 +7,7 @@ import org.mapstruct.ReportingPolicy;
 public interface MemberMapper {
     Member memberPostToMember(MemberDto.Post post);
 
+    Member memberPatchTOMember(MemberDto.Patch patch);
+
     MemberDto.response memberToMemberResponse(Member member);
 }
