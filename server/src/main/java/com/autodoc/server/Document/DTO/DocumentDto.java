@@ -6,8 +6,8 @@ import lombok.ToString;
 
 import java.util.Date;
 
-@AllArgsConstructor
-@ToString
+@AllArgsConstructor //생성자 자동생성
+@ToString //투스트링 자동생성
 public class DocumentDto {
 
     private Long id; // PK
@@ -21,7 +21,7 @@ public class DocumentDto {
 
 
 
-    public DocumentEntity toEntity() {
+    public DocumentEntity toEntity() { //DTO를 ENTITY로 변환
         return new DocumentEntity(id, title, destinationOfTrip, dateOfTrip, purposeOfTrip, deadline, approval, member_id);
     }
 }
