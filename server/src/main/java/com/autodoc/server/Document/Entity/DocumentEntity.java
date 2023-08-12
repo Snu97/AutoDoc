@@ -48,6 +48,8 @@ public class DocumentEntity {
     private Integer member_id; // 멤버 id
 
 
+
+
     public void patch(DocumentEntity documentEntity) { //null 버그 해결
         if (documentEntity.getTitle()!= null) {
             this.title = documentEntity.getTitle();
