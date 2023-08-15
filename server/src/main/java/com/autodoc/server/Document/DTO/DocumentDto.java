@@ -17,7 +17,7 @@ public class DocumentDto {
     private String purposeOfTrip; // 출장 목적
     private Date deadline; // 제출 날자
     private String approval; // 결재란
-    private Integer member_id; // 멤버 id
+    private Long member_id; // 멤버 id
 
 
 
