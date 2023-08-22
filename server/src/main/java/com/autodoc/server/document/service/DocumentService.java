@@ -3,6 +3,8 @@ package com.autodoc.server.document.service;
 import com.autodoc.server.document.dto.DocumentDto;
 import com.autodoc.server.document.entity.DocumentEntity;
 import com.autodoc.server.document.repository.DocumentRepository;
+import com.autodoc.server.exception.BusinessLogicException;
+import com.autodoc.server.exception.ExceptionCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +28,16 @@ public class DocumentService {
     }
 
     // create document
+
+        public DocumentEntity create(DocumentDto dto) {
+            DocumentEntity entity = dto.toEntity();
+
+            if (entity.getId() != null) {
+                return null;
+            }
+
+            return documentRepository.save(entity);
+        }
+
 
 }

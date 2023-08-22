@@ -30,9 +30,20 @@ public class DocumentController {
         return new ResponseEntity<>(documentService.getDocument(), HttpStatus.OK);
     }
     // Document 상세조회
-    @GetMapping("/document/{document-id}")
-    public DocumentEntity findDocumentByDetail(@PathVariable Long id) {
-        return documentService.findDocument(id);
+    @GetMapping("/document/{id}")
+    public ResponseEntity<DocumentEntity> findDocumentByDetail(@PathVariable Long id) {
+        return new ResponseEntity<>(documentService.findDocument(id), HttpStatus.OK);
+    }
+
+    // Document 생성
+
+    @PostMapping("/document")
+    public ResponseEntity<DocumentEntity> CreateDocument(@RequestBody DocumentDto dto) {
+        DocumentEntity create = documentService.create(dto);
+
+        return (create != null) ?
+                ResponseEntity.status(HttpStatus.OK).body(create) :
+                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
 }
