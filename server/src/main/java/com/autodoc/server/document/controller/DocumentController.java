@@ -29,6 +29,7 @@ public class DocumentController {
     public ResponseEntity<List<DocumentEntity>> getDocument() {
         return new ResponseEntity<>(documentService.getDocument(), HttpStatus.OK);
     }
+
     // Document 상세조회
     @GetMapping("/document/{id}")
     public ResponseEntity<DocumentEntity> findDocumentByDetail(@PathVariable Long id) {
@@ -44,6 +45,15 @@ public class DocumentController {
         return (create != null) ?
                 ResponseEntity.status(HttpStatus.OK).body(create) :
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    }
+
+    @DeleteMapping("/document/{id}")
+    public ResponseEntity<DocumentEntity> DeleteDocument(@PathVariable Long id) {
+        DocumentEntity entity = documentService.delete(id);
+        return (entity != null) ?
+                ResponseEntity.status(HttpStatus.BAD_REQUEST).build() :
+                ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+
     }
 
 }

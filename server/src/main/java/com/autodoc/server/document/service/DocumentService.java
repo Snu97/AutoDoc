@@ -18,7 +18,7 @@ public class DocumentService {
     private DocumentRepository documentRepository;
 
     //document 전체조회
-    public  List<DocumentEntity> getDocument() {
+    public List<DocumentEntity> getDocument() {
         return documentRepository.findAll();
     }
 
@@ -29,15 +29,25 @@ public class DocumentService {
 
     // create document
 
-        public DocumentEntity create(DocumentDto dto) {
-            DocumentEntity entity = dto.toEntity();
+    public DocumentEntity create(DocumentDto dto) {
+        DocumentEntity entity = dto.toEntity();
 
-            if (entity.getId() != null) {
-                return null;
-            }
-
-            return documentRepository.save(entity);
+        if (entity.getId() != null) {
+            return null;
         }
 
+        return documentRepository.save(entity);
+    }
+
+    //document 삭제
+    public DocumentEntity delete(Long id) {
+        DocumentEntity entity = documentRepository.findById(id).orElse(null);
+
+        if (entity == null) {
+            return null;
+        }
+        documentRepository.delete(entity);
+        return entity;
+    }
 
 }
