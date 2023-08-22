@@ -1,5 +1,4 @@
 package com.autodoc.server.document.controller;
-
 import com.autodoc.server.document.dto.DocumentDto;
 import com.autodoc.server.document.entity.DocumentEntity;
 import com.autodoc.server.document.repository.DocumentRepository;
@@ -37,7 +36,6 @@ public class DocumentController {
     }
 
     // Document 생성
-
     @PostMapping("/document")
     public ResponseEntity<DocumentEntity> CreateDocument(@RequestBody DocumentDto dto) {
         DocumentEntity create = documentService.create(dto);
@@ -47,9 +45,11 @@ public class DocumentController {
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
+    // Document 삭제
     @DeleteMapping("/document/{id}")
     public ResponseEntity<DocumentEntity> DeleteDocument(@PathVariable Long id) {
         DocumentEntity entity = documentService.delete(id);
+
         return (entity != null) ?
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build() :
                 ResponseEntity.status(HttpStatus.NO_CONTENT).build();
