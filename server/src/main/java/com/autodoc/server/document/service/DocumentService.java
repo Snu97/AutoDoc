@@ -15,12 +15,12 @@ public class DocumentService {
     @Autowired
     private DocumentRepository documentRepository;
 
+    //document 전체조회
     public  List<DocumentEntity> getDocument() {
         return documentRepository.findAll();
     }
 
-    //
-
+    //document 단건조회
     public DocumentEntity findDocument(Long id) {
         return documentRepository.findById(id).orElse(null);
     }
