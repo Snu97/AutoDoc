@@ -28,7 +28,6 @@ public class DocumentService {
     }
 
     // create document
-
     public DocumentEntity create(DocumentDto dto) {
         DocumentEntity entity = dto.toEntity();
 
@@ -36,7 +35,6 @@ public class DocumentService {
             return null;
         }
 
-        //리턴
         return documentRepository.save(entity);
     }
 
