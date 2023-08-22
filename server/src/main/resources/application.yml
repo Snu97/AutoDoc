@@ -6,9 +6,9 @@ spring:
     password: ${AUTODOC_PASSWORD}
   jpa:
     database: mysql
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-        ddl-auto: update
-        format_sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+      ddl-auto: update
+      format_sql: true
+#    properties:
     show-sql: true

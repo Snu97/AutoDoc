@@ -11,7 +11,9 @@ public enum ExceptionCode {
     INVALID_PASSWORD(400, "비밀번호가 유효하지 않습니다"),
     INVALID_TOKEN(400, "유효하지 않은 토큰입니다"),
     LOGIN_FAILED(401, "로그인에 실패하였습니다. 사용자 이름 또는 비밀번호를 확인해주세요"),
-    INVALID_MEMBER_STATUS(400, "유효하지 않은 회원 상태입니다");
+    INVALID_MEMBER_STATUS(400, "유효하지 않은 회원 상태입니다"),
+    DOCUMENT_NOT_FOUND(404, "명세서를 찾을 수 없습니다"),
+    EXPENSE_NOT_FOUND(404, "경비를 찾을 수 없습니다");
 
     @Getter
     private int status;
