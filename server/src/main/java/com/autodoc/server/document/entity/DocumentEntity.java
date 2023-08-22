@@ -1,11 +1,11 @@
-package com.autodoc.server.Document.Entity;
+package com.autodoc.server.document.entity;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -45,7 +45,7 @@ public class DocumentEntity {
     private String approval; // 결재란
 
     @Column()
-    private Integer member_id; // 멤버 id
+    private Long member_id; // 멤버 id
 
 
 

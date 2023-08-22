@@ -1,6 +1,6 @@
-package com.autodoc.server.Document.Repository;
+package com.autodoc.server.document.repository;
 
-import com.autodoc.server.Document.Entity.DocumentEntity;
+import com.autodoc.server.document.entity.DocumentEntity;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.ArrayList;
