@@ -18,7 +18,6 @@ public class DocumentController {
 
     @Autowired
     private DocumentService documentService;
-
     public DocumentController(DocumentService documentService) {
         this.documentService = documentService;
     }

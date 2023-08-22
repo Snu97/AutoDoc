@@ -25,7 +25,6 @@ public class DocumentDto {
     public DocumentEntity toEntity() { //DTO를 ENTITY로 변환
         return new DocumentEntity(id, title, destinationOfTrip, dateOfTrip, purposeOfTrip, deadline, approval, member_id);
     }
-
     @Setter
     public static class getDocument {
 

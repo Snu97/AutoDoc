@@ -21,7 +21,6 @@ import java.util.Date;
 
 public class DocumentEntity {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
